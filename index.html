@@ -3,561 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assertive Powder Coating & Metal Fabrication | Premium Installations</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <title>Assertive | Industrial Fabrication & Finishing</title>
     <style>
-        :root {
-            --bg: #030304;
-            --surface: #0a0a0c;
-            --surface-light: #111216;
-            --accent-gold: #D4AF37;
-            --accent-gold-hover: #b5952f;
-            --text-main: #fcfcfc;
-            --text-muted: #9aa0a6;
-            --border: rgba(255, 255, 255, 0.08);
-            --grid-line: rgba(255, 255, 255, 0.03);
-            --font-sans: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* Velo-Style Structural Grid Lines */
-        .velo-grid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-            background-size: 80px 80px;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        /* --- Header --- */
-        header {
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(3, 3, 4, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 90px;
-        }
-
-        .logo-block {
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .logo-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .logo-subtitle {
-            font-size: 0.7rem;
-            color: var(--accent-gold);
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .nav-cta {
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold) !important;
-            padding: 10px 24px;
-            border-radius: 2px;
-        }
-
-        .nav-cta:hover {
-            background: var(--accent-gold);
-            color: var(--bg) !important;
-        }
-
-        /* --- Hero Section with Background Image --- */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 90px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-
-        .meta-tagline {
-            display: inline-block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-            color: var(--accent-gold);
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--accent-gold);
-            padding-bottom: 8px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            font-weight: 400;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 32px;
-        }
-
-        .hero h1 span {
-            font-family: var(--font-serif);
-            font-style: italic;
-            color: var(--accent-gold);
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 48px;
-            font-weight: 300;
-        }
-
-        .btn-luxury {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: var(--bg);
-            border: 1px solid var(--accent-gold);
-        }
-
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--accent-gold);
-        }
-
-        /* --- Standard About Section --- */
-        .section-pad {
-            padding: 140px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border: 1px solid var(--border);
-            padding: 12px;
-            background: var(--surface);
-        }
-
-        .section-header {
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 32px;
-            line-height: 1.2;
-        }
-
-        .section-header span {
-            font-family: var(--font-serif);
-            font-style: italic;
-            color: var(--accent-gold);
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 24px;
-            font-weight: 300;
-        }
-
-        /* --- Premium Capabilities Matrix --- */
-        .premium-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
-        }
-
-        .luxury-card {
-            background-color: var(--surface);
-            border: 1px solid var(--border);
-            padding: 50px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .luxury-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent-gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .luxury-card:hover {
-            background-color: var(--surface-light);
-            transform: translateY(-5px);
-        }
-
-        .luxury-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-number {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            font-style: italic;
-            color: var(--border);
-            margin-bottom: 24px;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .luxury-card:hover .card-number {
-            color: var(--accent-gold);
-        }
-
-        .luxury-card h3 {
-            font-size: 1.6rem;
-            font-weight: 400;
-            margin-bottom: 16px;
-        }
-
-        .luxury-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-        }
-
-        .spec-list {
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-        }
-
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .spec-label { color: var(--text-muted); }
-        .spec-value { color: var(--accent-gold); font-weight: 500; }
-
-        /* --- Review / Consultation Module --- */
-        .form-container {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 60px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .luxury-field { margin-bottom: 32px; }
-
-        .luxury-field label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-
-        .luxury-field input, .luxury-field textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            padding: 12px 0;
-            color: var(--text-main);
-            font-size: 1.1rem;
-            outline: none;
-            transition: var(--transition);
-            font-family: var(--font-sans);
-        }
-
-        .luxury-field input:focus, .luxury-field textarea:focus {
-            border-bottom-color: var(--accent-gold);
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 80px 0 40px 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-family: var(--font-serif);
-            font-style: italic;
-            color: var(--accent-gold);
-            margin-bottom: 24px;
-        }
-
-        .footer-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
-        }
-
-        /* --- Floating Action Button --- */
-        .floating-action-pill {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--bg);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            text-decoration: none;
-            padding: 16px 32px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            transition: var(--transition);
-            z-index: 999;
-            backdrop-filter: blur(10px);
-        }
-
-        .floating-action-pill:hover {
-            background-color: var(--accent-gold);
-            color: var(--bg);
-            transform: translateY(-4px);
-        }
-
-        @media (max-width: 992px) {
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .nav-links { display: none; }
-        }
+        :root { --bg: #050505; --surface: #111111; --accent: #e6b800; --text: #ffffff; --text-dim: #a0a0a0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Nav */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Hero */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+        
+        /* Sections */
+        section { padding: 5rem 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: var(--surface); padding: 2rem; border: 1px solid #222; }
+        
+        /* Footer */
+        footer { padding: 4rem 0; border-top: 1px solid #222; margin-top: 5rem; color: var(--text-dim); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
     </style>
 </head>
 <body>
 
-    <div class="velo-grid-bg"></div>
-
-    <header>
-        <div class="container nav">
-            <a href="#" class="logo-block">
-                <div class="logo-title">Assertive</div>
-                <div class="logo-subtitle">Powder Coating & Metal</div>
-            </a>
-            <div class="nav-links">
-                <a href="#about">The Standard</a>
-                <a href="#capabilities">Capabilities</a>
-                <a href="#consultation">Consultation</a>
-                <a href="tel:5738738440" class="nav-cta">(573) 873-8440</a>
-            </div>
+    <nav class="container">
+        <div style="font-weight: 800; font-size: 1.5rem;">ASSERTIVE</div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact" style="color: var(--accent);">Contact</a>
         </div>
+    </nav>
+
+    <header class="container hero">
+        <h1>Industrial-Grade Precision.</h1>
+        <p>Engineering-grade fabrication and finishing for high-stakes commercial assets.</p>
     </header>
 
-    <main>
-        
-        <section class="hero">
-            <div class="hero-bg"></div>
-            <div class="container hero-content">
-                <span class="meta-tagline">Lake of the Ozarks, MO</span>
-                <h1>Architectural Grade. <br><span>Flawless Execution.</span></h1>
-                <p class="hero-description">Specializing in high-tolerance structural fabrication, custom cable railing architectures, and elite protective powder coating for premium residential and commercial properties.</p>
-                <a href="#consultation" class="btn-luxury btn-gold">Initiate Project</a>
+    <main class="container">
+        <section id="services">
+            <h2>Core Capabilities</h2>
+            <div class="grid" style="margin-top: 2rem;">
+                <article class="card"><h3>Corrosion Defense</h3><p>Military-spec powder coating.</p></article>
+                <article class="card"><h3>Precision Fab</h3><p>Tight-tolerance CNC work.</p></article>
+                <article class="card"><h3>Welding</h3><p>On-site structural repair.</p></article>
             </div>
         </section>
 
-        <section id="about" class="section-pad">
-            <div class="container about-grid">
-                <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=1000" alt="Precision Metal Work" class="about-image">
-                <div class="about-text">
-                    <span class="meta-tagline">The Assertive Standard</span>
-                    <h2 class="section-header">Engineered for <span>Longevity.</span></h2>
-                    <p>At Assertive, we bridge the gap between heavy industrial strength and refined architectural beauty. We do not compromise on substrate preparation or finish quality.</p>
-                    <p>Whether we are executing a custom multi-level cable railing system or processing a batch of structural components through our powder coating ovens, our process isolates variables to ensure extreme adhesion, chemical resilience, and a perfect visual finish every single time.</p>
-                </div>
-            </div>
+        <section id="about">
+            <h2>Industrial Authority</h2>
+            <p style="max-width: 700px; margin-top: 1rem;">We operate at the intersection of precision engineering and heavy-duty durability. We don't just coat metal; we protect multi-million dollar assets.</p>
         </section>
 
-        <section id="capabilities" class="section-pad">
-            <div class="container">
-                <span class="meta-tagline">Core Systems</span>
-                <h2 class="section-header">Premium <span>Capabilities.</span></h2>
-                
-                <div class="premium-matrix">
-                    
-                    <div class="luxury-card">
-                        <span class="card-number">01</span>
-                        <h3>Custom Fabrication</h3>
-                        <p>Bespoke technical layouts, custom multi-axis tooling framing runs, and premium heavy assembly configurations tailored for your specific property footprint.</p>
-                        <div class="spec-list">
-                            <div class="spec-item"><span class="spec-label">Specialty</span><span class="spec-value">Cable Railings</span></div>
-                            <div class="spec-item"><span class="spec-label">Timeline</span><span class="spec-value">Project Based</span></div>
-                        </div>
-                    </div>
-
-                    <div class="luxury-card">
-                        <span class="card-number">02</span>
-                        <h3>Powder Coating</h3>
-                        <p>High-tolerance electromagnetic protective polymer application layers baked and cured for maximum adhesion resilience against extreme outdoor elements.</p>
-                        <div class="spec-list">
-                            <div class="spec-item"><span class="spec-label">Preparation</span><span class="spec-value">Sandblasted</span></div>
-                            <div class="spec-item"><span class="spec-label">Timeline</span><span class="spec-value">Batch Dependent</span></div>
-                        </div>
-                    </div>
-
-                    <div class="luxury-card">
-                        <span class="card-number">03</span>
-                        <h3>Structural Repair</h3>
-                        <p>Certified architectural fusion and structural restoration treatments applied strictly to code, on-site or inside our specialized production studio.</p>
-                        <div class="spec-list">
-                            <div class="spec-item"><span class="spec-label">Allocation</span><span class="spec-value">8 hr Base Block</span></div>
-                            <div class="spec-item"><span class="spec-label">Pricing</span><span class="spec-value">Custom Quote</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <section id="reviews">
+            <h2>Client Impact</h2>
+            <p>“Exceeded all quality benchmarks for our fleet.” — B&M Trailer Manufacture</p>
         </section>
 
-        <section id="consultation" class="section-pad">
-            <div class="container">
-                <div class="form-container">
-                    <span class="meta-tagline" style="display: block; text-align: center;">Project Inquiry</span>
-                    <h2 class="section-header">Request a <span>Consultation</span></h2>
-                    
-                    <form onsubmit="event.preventDefault();">
-                        <div class="luxury-field">
-                            <label for="name">Client Name / Organization</label>
-                            <input type="text" id="name" placeholder="Enter your full name">
-                        </div>
-                        <div class="luxury-field">
-                            <label for="project">Project Scope</label>
-                            <input type="text" id="project" placeholder="E.g., Powder Coating 20ft Railing">
-                        </div>
-                        <div class="luxury-field">
-                            <label for="details">Additional Details</label>
-                            <textarea id="details" rows="3" placeholder="Provide dimensions, timelines, or specific requirements..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-luxury btn-gold" style="width: 100%; border: none; cursor: pointer;">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
+        <section id="contact">
+            <h2>Project Intake</h2>
+            <form style="background: var(--surface); padding: 3rem; margin-top: 2rem;">
+                <input type="text" placeholder="Company Name" style="width: 100%; padding: 1rem; margin-bottom: 1rem; background: #000; border: 1px solid #333; color: white;">
+                <textarea rows="5" placeholder="Project Requirements..." style="width: 100%; padding: 1rem; margin-bottom: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
+                <button style="background: var(--accent); padding: 1rem 2rem; border: none; font-weight: bold; cursor: pointer;">Request Audit</button>
+            </form>
         </section>
-
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-logo">Assertive</div>
-            <div class="footer-text">&copy; 2026 Assertive Powder Coating & Metal Fabrication. All Rights Reserved. <br><br> Lake of the Ozarks, MO · (573) 873-8440</div>
+    <footer class="container">
+        <div class="footer-grid">
+            <div><h4>Location</h4><p>230 Beachwood Drive<br>Sunrise Beach, MO</p></div>
+            <div><h4>Support</h4><p>(573) 692-0184<br>Assertivepowdercoating@gmail.com</p></div>
         </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem;">&copy; 2026 Assertive Powder Coating & Metal Fabrication.</p>
     </footer>
-
-    <a href="tel:5738738440" class="floating-action-pill">
-        Text for Quote →
-    </a>
 
 </body>
 </html>
